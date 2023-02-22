@@ -11,11 +11,11 @@ namespace Mission06_km2264.Models
         [Key]
         [Required]
         public int Id { get; set; }
-        [Required(ErrorMessage = "Category is a required field")] // validation
-        public string Category { get; set; }
-        [Required(ErrorMessage = "title is a required field")] // validation
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+        [Required(ErrorMessage = "Title is a required field")] // validation
         public string Title { get; set; }
-        [Required(ErrorMessage = "Year is a required field")] // validation
+        [Required] // validation
         public short Year { get; set; }
         [Required(ErrorMessage = "Director is a required field")] // validation
         public string Director { get; set; }

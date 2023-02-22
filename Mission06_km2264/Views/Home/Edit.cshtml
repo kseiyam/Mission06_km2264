@@ -1,13 +1,15 @@
 ﻿@{
-    ViewData["Title"] = "Enter Movie";
+    ViewData["Title"] = "Edit";
 }
 @model Mission06_km2264.Models.EnterMovieResponse
 
-<h1>Enter Movie</h1>
+<h1>Edit Movie</h1>
 
 <div>
     <form method="post">
         <div asp-validation-summary="All"></div>
+        <input type="hidden" asp-for="Id" />
+        @*allow user to select category from dropdown list*@
         <label asp-for="CategoryId">Category:</label>
         <select asp-for="CategoryId">
             <option value="">Select a category</option>
@@ -42,5 +44,7 @@
         <input asp-for="Notes" /><br />
 
         <button type="submit">Submit</button>
+
+        <input type="hidden" asp-for="Id" />
     </form>
 </div>

@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Movie List";
+}
+@model List<EnterMovieResponse>
+
+<table class="table table-bordered table-striped">
+    <thead class="font-weight-bold">
+        <tr>
+            <td>Category</td>
+            <td>Title</td>
+            <td>Year</td>
+            <td>Director</td>
+            <td>Rating</td>
+            <td>Edited?</td>
+            <td>Lent</td>
+            <td>Notes</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model) @*goes through each record in model*@
+            {
+                <tr>
+                    <td>@i.Category.CategoryName</td>
+                    <td>@i.Title</td>
+                    <td>@i.Year</td>
+                    <td>@i.Director</td>
+                    <td>@i.Rating</td>
+                    <td>@i.Edited</td>
+                    <td>@i.Lent</td>
+                    <td>@i.Notes</td>
+
+                    <td><a asp-controller="Home" asp-action="Edit" asp-route-responseid="@i.Id">Edit</a></td>
+                    <td><a asp-controller="Home" asp-action="Delete" asp-route-responseid="@i.Id">Delete</a></td>
+                </tr>
+            }
+    </tbody>
+</table>
